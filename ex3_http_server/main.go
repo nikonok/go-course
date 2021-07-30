@@ -18,9 +18,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	switch r.Method {
-		case "GET":
+		case http.MethodGet:
 			fmt.Fprint(w, message)
-		case "POST":
+		case http.MethodPost:
 			// get new value for message
 			message = r.PostFormValue("hello-msg")
 			fmt.Fprint(w, message)
